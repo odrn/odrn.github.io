@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Series</title>
+    <link rel="stylesheet" href="../css/blogstyle.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="banner">
+
+    </div>
+
+    <div class="content">
+        <h1>Series and Functions</h1>
+        <h2>Laurent Series</h2>
+    <p>To demonstrate contour integration in good conscience, I would like to present some basic analysis. 
+      It will result that (otherwise holomorphic) functions with <i>isolated</i> singularities 
+      have an analogy to the Taylor series called the Laurent series. The coefficients of these series are 
+      intimately related to contour integration. 
+      <br><br>
+      First, let's prove Taylor's theorem in the real case. This might allow us to better appreciate the complex case. 
+      Taylor says that (when the derivatives exist), there is a function $h_k$ with 
+      \[f(x)=f(a)+f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots + \frac{f^{(k)}(a)}{k!}(x-a)^k + h_k(x)(x-a)^k,\] 
+      and $h_k(x) \to 0$ as $x \to a$. 
+      <br><br>
+      
+    </p>
+    <h3>Proof of Taylor's Theorem</h3>
+    <p>
+    The base case $k=0$ is simple: 
+    \[f(x)=f(a)+h_0(x)\] with $h_0(x)=f(x)-f(a)$ satisfies the theorem. Now, we will assume the theorem for $k$. 
+    Write $T_k(x)$ for the $k$th order Taylor polynomial of $f(x)$. Then we are assuming 
+    \[f(x)=T_k(x) + h_k(x)(x-a)^k.\] This is much nicer if we restate using big-$O$ notation: 
+    \[f(x)= T_k(x) + O((x-a)^{k+1}).\] (Here, I use the big-$O$ as $x \to a$). We can rewrite as 
+    \[f(x)= T_{k+1}(x) - \frac{f^{(k+1)}}{(k+1)!}(x-a)^{k+1} +  O((x-a)^{k+1}).\]
+    </p>
+
+  
+    </div>
+  </body>

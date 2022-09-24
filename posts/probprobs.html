@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prob</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="banner">
+
+    </div>
+
+    <div class="content">
+        <h1>Probability Paradox</h1>
+        <h2>Problem:</h2>
+    <b><i><p>There are two distinct positive integers $X,Y$, each written on separate pieces of paper.
+        $X,Y$ were not necessarily picked with any distribution; in fact you know nothing about their
+        distribution at all. You may look at $X$, and you are asked to guess if $Y$
+         is bigger or smaller than $X$. <br><br>You have access to a random number generator
+        which generates uniformly random numbers on $(0,1)$.<br><br>Find a strategy which is correct
+    with probability greater than $0.5$, regardless of the distribution of $(X,Y)$.  </p></i></b>
+    <br>
+
+    <h2>Solution:</h2>
+    <p>Notice that we can actually generate random reals on $(1,\infty)$ by taking the reciprocal
+        of a random on $(0,1)$. We will generate a real $r \in (1, \infty)$. Our strategy 
+        will be to guess e.g $X>Y$ if $X>r$. Now, there are $4$ ways we can be correct:
+        
+    </p>
+    <li>Pick $X$, $(X>Y)$, $X>r$</li> 
+    <li>Pick $X$, $(X< Y)$, $X < r$ </li> 
+    <li>Pick $Y$, $(X>Y)$, $Y< r $ </li> 
+    <li>Pick $Y$, $(X< Y)$, $Y >r$</li> 
+ 
+    <p>This gives us an expression for the probability we are correct, as follows: 
+        \[ P=0.5(P(X>Y,X>r) + P(X< Y , X > r) + P(Y > X,Y>r) + P(Y< X, Y< r)), \]where the $0.5$
+        is because we have an equal chance of seeing $X,Y$.<br><br>We can combine some probabiliites: 
+        \[P(X>Y, X>r) + P(X>Y, Y< r) = P(X>Y)+P(X>Y, Y < r < X).\]Therefore our expression becomes 
+        \[P=0.5(P(X>Y) + P(X>Y, Y< r < X) + P(X < Y) + P(X < Y, Y < r < X)),\] which clearly simplifies to
+        \[P=0.5(1+P(Y < r < X))>0.5,\] so we are done.
+        
+    </p>
+    <h2>What Just Happened?</h2>
+    <p>It seems like we can guess something about a random number, given another totally random number.
+        This is of course unhelpful in the real world, since we can't do this kind of random number generation.
+        Well, we can only outperform random guessing by the amount $0.5P(Y < r < X)$, which depends on the 
+        distribution that the "setter" is using to pick $X,Y$. 
+        <br><br>In summary, it is indeed true that our "probability of being correct" is strictly greater
+        than one half, but the performance depends on the distribution being used.
+    </p>
+    </div>
+  </body>

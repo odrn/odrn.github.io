@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tensor Product</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="content">
+        <h1>Tensor Product</h1>
+        <h2>Motivation</h2>
+    <p>
+        Our goal is to find the most natural way of "multiplying"
+        differential forms - that is, some way of combining forms which obeys intuitive properties like 
+        $dx \times dy = -dy \times dx$ (reversing orientation should reverse sign), or 
+        $dx \times (dy + dz)=dx \times dy + dx \times dz$. These properties encode our geometric intuition for 
+        how integrating a combination of forms should work.
+        <br><br>
+        The tensor product is the most general kind of vector product we can define, and by imposing an extra 
+        condition afterwards we will obtain the "exterior product", of huge importance in calculus.
+    </p>
+    <h3>How It Works</h3>
+    <h3>Bilinear Mappings Become Linear Mappings</h3>
+    <p>
+        Bilinear mappings take in two vectors and spit out a number (an element of the field $K$). They are 
+        ways of "multiplying" two vectors (like the inner product). They are called bilinear since 
+        they are linear in each argument (think of how you could split out $(ax+by) \cdot (cu+dv)$).
+        <br><br>
+        <b>The tensor product is the vector space $V \otimes W$ such that for any bilinear mapping 
+        $B:V \times W \to K$, there is a unique linear mapping $\phi_B: V \otimes W \to K$. </b>
+        <br><br>
+        That is, the tensor product lets us use linear algebra on bilinear mappings. 
+    
+        <h3>The Universal Property</h3>
+        <p>
+        The universal property of the tensor product just says that 
+        "for any bilinear mapping 
+        $B:V \times W \to K$, there is a unique linear mapping $\phi_B: V \otimes W \to K$". I used this 
+        as the definition of the tensor product since it happens to work, as demonstrated 
+        <a href="http://www-groups.mcs.st-andrews.ac.uk/~ac323/slides/Khalid15-1.pdf">here</a>, 
+         but it is most important to understand the "universal property" that identifies bilinear mappings with 
+         linear ones. Specifically (read the next part carefully), 
+         if there is a bilinear mapping $B: V \times W \to K$, then the element 
+         $v \otimes w \in V \otimes W$ is the element such that the $\phi_B : V \otimes W \to K$ 
+         which corresponds to $B$ has $\phi(v \otimes w) = B(v,w)$. (The universal property basically says 
+         that a unique linear $\phi_B$ exists for each $B$, and the construction of the tensor product gives us 
+         the nice relationship above.) 
+         <br><br>
+         The element 
+         
+        </p>
+        <h3></h3>
+    <p>
+           
+
+    </p>
+    </div>
+  </body>

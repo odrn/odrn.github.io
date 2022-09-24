@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contour</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="banner">
+
+    </div>
+
+    <div class="content">
+        <h1>Contour Integration (for Dummies)</h1>
+        <p>First, we should motivate contour integration.
+          Usually, people "motivate" a technique by trivialising some contrived example.
+       I would prefer to motivate contour integration by explaining <i>why it should help us:</i> 
+       <br><br>
+       <b>Contour should be more powerful than basic integration techniues, since we can apply e.g the 'residue theorem' 
+        (a consequence of Stokes')
+           to evaluate easily along closed contours. <i>We essentially unlock more of the power of Stokes' theorem.</i></b>
+        </p>
+       
+        <h2>Residues</h2>
+        <p>From our introduction to Stokes' theorem, we know that the integral around some closed contour is 
+         $0$, assuming all the things in the Stokes' expression exist. Here is a refresher: 
+         \[\int_\Omega d \omega = \int_{\partial \Omega } \omega ,\] but the LHS might not exist. 
+         
+        </p>
+        <img src="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\images\resi.png" class="center">
+        <p>For example, we might assume the integral of $f(z)$ around the above contour to be $0$, 
+         but if $f$ has a pole at $i$ then this isn't the case. <br><br>
+         Instead, we would have to wrap our contour around the singularity as closely as possible, and 
+         see what results. I will guide you through the process:</p>
+         
+         <li>We would like to find the integral $\int_\gamma \frac{f(z)}{z-z_0}$, i.e there is a singularity 
+           at $z_0$.
+         </li>
+         <li>We need to make some kind of substitution $z=g(\theta)$, 
+          which turns our integral into one around the circle $|z-z_0|=r$.
+         </li>
+         <li>Once you have made this substitution, let $r \to 0$ and see what you are left with.</li>
+        <h3>Cauchy's Integral Formula:</h3>
+        <p>Hopefully, your expression should rearrange to Cauchy's integral formula
+        \[\int_\gamma \frac{f(z)}{z-z_0} = 2 \pi i f(z_0).\] We can </p>
+       
+    </div>
+  </body>

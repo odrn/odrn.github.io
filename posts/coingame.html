@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\comments.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="banner">
+
+    </div>
+
+    <div class="content">
+        <h1>Coin Game</h1>
+        <p>
+            Here's how it works: 
+            <br><br>
+            There is a biased coin (the probability of heads is fixed, but it isn't known). 
+            You can place an integer bet from $0$ to $B$ (where $B$ is your whole balance) at "even-money" or $2:1$ odds 
+            <b>on the coin coming up heads or tails (your choice)</b>.
+            <br><br>
+            The coin is flipped and your balance updates accordingly.
+            <br><br>
+            The process will continue as long as you keep playing. 
+            <br><br>
+            The coin's results are tracked for you at the bottom.
+        </p>
+
+        <center><h3>Bankroll:</h3><h2 id="balance"></h2></center>
+
+        <script>
+
+            let p = Math.random();
+
+            function randomDigit(p) {
+                let x = Math.random();
+                if(x<p){
+                    return "1";
+                }
+                else{
+                    return "0";
+                }
+                }
+
+            function generateRandomBinary(length,p) {
+            var binary = "";
+            for(let i = 0; i < length; ++i) {
+                binary += randomDigit(p);
+            }
+            return binary;
+            }
+
+            const seq = generateRandomBinary(100,p);
+            console.log(seq); 
+
+            let bankroll = parseInt(100);
+            document.getElementById("balance").innerHTML = bankroll;
+            let i = 0;
+
+            function buy(){
+                var betsize = document.getElementById("size").value;
+                if(betsize>bankroll){
+                    location.reload();
+                }
+                if(seq.charAt(i) == "1"){
+                    bankroll += parseInt(betsize);
+                    document.getElementById("results").innerHTML += "H";
+                }
+                else{
+                    bankroll -= parseInt(betsize);
+                    document.getElementById("results").innerHTML += "T";
+                }
+                console.log(bankroll);
+                document.getElementById("balance").innerHTML = bankroll;
+                i+=1;
+                return;
+            }
+
+            function sell(){
+                var betsize = document.getElementById("size").value;
+                if(betsize>bankroll){
+                    location.reload();
+                }
+                if(seq.charAt(i) == "1"){
+                    bankroll -= parseInt(betsize);
+                    document.getElementById("results").innerHTML += "H";
+                }
+                else{
+                    bankroll += parseInt(betsize);
+                    document.getElementById("results").innerHTML += "T";
+                }
+                i+=1;
+                console.log(bankroll);
+                document.getElementById("balance").innerHTML = bankroll;
+                return;
+            }
+
+        </script>
+
+        <button onclick="buy()">Bet Heads</button>
+        <form>
+            <label>Bet Size</label>
+            <input type="text" id="size" autocomplete="off">
+        </form>
+        <button onclick="sell()">Bet Tails</button>
+
+        <p id="results"></p>
+
+
+
+      
+            
+        
+    </div>
+  </body>

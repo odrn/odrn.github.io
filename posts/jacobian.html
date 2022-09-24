@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jacobian</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="banner">
+
+    </div>
+
+    <div class="content">
+        <h1>The Jacobian Matrix</h1>
+        <p>Our first generalisation of the derivative is for functions $f: \mathbb{R}^m \to \mathbb{R}^n$.
+          (This actually works for normed vector spaces in general.) 
+            We first define the "Frechet" derivative, and then show that it acts component-wise and is the same as 
+            the "Jacobian matrix".<br><br>
+            This is computationally useful, but also helps us see concretely what happens algebraically when we take 
+            derivatives. <br><br>A definition of the Jacobian matrix is given 
+            <a href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">here</a>, but you 
+          might prefer to just watch it fall out.</p>
+
+<h2>The Frechet Derivative</h2>
+<h3>The Frechet Derivative</h3>
+<p>
+The Frechet derivative is $Df(\mathbf{x})$, where
+\[\lim_{|\mathbf{h}| \to 0} \frac{\left| f(\mathbf{x}+\mathbf{h})- f(\mathbf{x}) -(Df(\mathbf{x}))( \mathbf{h}) \right|}{|\mathbf{h}|} = 0.\]
+$Df(\mathbf{x})$ is intuitively the closest linear transformation to $f$ at $\mathbf{x}$. (The norm symbol doesn't mean 
+the same thing each time it is used here.)
+<br><br>
+
+<h3>The Frechet Derivative Acts Component-wise</h3>
+<p>
+Suppose that $f: \mathbb{R}^m  \to   \mathbb{R}^n$, and let the basis of $\mathbb{R}^n$ be $\{e_i\}$. First, let's show 
+that the derivative acts component-wise (whenever it exists). Firstly,
+\[Df(\mathbf{x})(\mathbf{h}) = ((Df(\mathbf{x})(\mathbf{h}))_1 e_1, ..., (Df(\mathbf{x})(\mathbf{h})_n) e_n),\] 
+by the definition of a basis. We just need to show that 
+\[(Df_i(\mathbf{x}))(\mathbf{h})\] exists, and that \[Df_i(\mathbf{x})(\mathbf{h}) = (Df(\mathbf{x})(\mathbf{h}))_i.\]
+For this, we use the fact that $\{e_i\}$ is a basis: if 
+\[\lim_{|\mathbf{h}| \to 0} \frac{\left| f(\mathbf{x}+\mathbf{h})- f(\mathbf{x}) -(Df(\mathbf{x})) \mathbf{h} \right|}{|\mathbf{h}|} = 0,\]
+then 
+\[ \lim_{|\mathbf{h}| \to 0} \left| \sum_{i=1}^n  \frac{1}{|h|}\left( f_i(\mathbf{x}+\mathbf{h})-f_i(\mathbf{x})-(Df(\mathbf{x}))_i(h) \right) e_i \right|= 0 \]
+(note that the norm $|\cdot|$ doesn't always mean the same one). The norm of a vector is $0$ only if that vector is $0$. 
+A vector is $0$ only if each component is $0$. Therefore each term of the sum is $0$, i.e 
+\[\lim_{|\mathbf{h}| \to 0} \frac{\left| f_i(\mathbf{x}+\mathbf{h})-f_i(\mathbf{x})-(Df(\mathbf{x}))_i(h) \right|}{|h|} = 0.\]
+By definition, we can therefore write $Df_i(\mathbf{x}) = Df(\mathbf{x})_i$, or "the $i$th component of the Frechet derivative 
+is the Frechet derivative of the $i$th component". </p>
+<br><br>
+<h2>The Main Result</h2>
+<h3>The Frechet Derivative is (coincides with) the Jacobian Matrix</h3>
+<p>
+We can now see algebraically why the Frechet derivative is the Jacobian matrix, as follows. Let 
+\[f(x_1,x_2,...,x_m)=(f_1(x_1,x_2,...,x_m), ..., f_n(x_1,x_2,...,x_m)).\] Taking the Frechet derivative of both sides,
+\[Df(x_1,x_2,...,x_m) = (Df_1(x_1,x_2,...,x_m), ..., Df_n(x_1,x_2,...,x_m))\] since we can distribute the $D$ component-wise.
+Now, we can distribute the $D$ component-wise again on the RHS:
+\[Df(x_1,x_2,...,x_m) = ((Df_1(x_1),..., Df_1(x_m))),(Df_2(x_1),..., Df_2(x_m))),..., (Df_n(x_1),Df_n(x_2),...,Df_n(x_m)))\] 
+and the RHS is exactly the Jacobian matrix since $Df_i(x_j) = \frac{\partial f_i}{\partial x_j}$.
+</p>
+
+<h3>Application in Integration</h3>
+<p>Dr. Trevor Bazett motivates the method cleanly and quickly 
+  <a href="https://www.youtube.com/watch?v=wUF-lyyWpUc">here</a>. (We treat the determinant of the Jacobian as how much 
+  the integral should change under a substitution, allowing us to make substitutions in multiple integrals.)
+  You can use this to derive an alternate expression for e.g 
+  \[I = \iint f(x,y) dxdy\] in terms of polar coordinates $r, \theta$. 
+  </p>
+  <h2>Exercises</h2>
+  <h3>The Gaussian Integral</h3>
+  <p>
+   Find the Jacobian of the function where
+  $(x,y) \mapsto (r, \theta)$ and deduce the new expression 
+  for $I$ in terms of $r, \theta$. From here, if I let
+  you assume the following, \[\int e^{-x^2} dx \int e^{-y^2} dy = \int \int e^{-(x^2+y^2)}dxdy,\]  you can evaluate the 
+  Gaussian integral $\int_{-\infty}^\infty e^{-x^2}dx$.
+</p>
+<h3>Moment of Inertia of an Ellipse</h3>
+<p>
+  
+</p>
+
+    </div>
+  </body>

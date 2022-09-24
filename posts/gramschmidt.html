@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gram-Schmidt</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\comments.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+
+  <body>
+    <div class="banner">
+
+    </div>
+
+    <div class="content">
+        <h1>Implementing Gram-Schmidt Orthoganalisation</h1>
+        <h2>
+            Setup
+        </h2>
+        <p>
+            I will use Python 3.10 with only the "math" module. The goal is to find an orthonormal basis from 
+            starting from an arbitrary basis, where we are in the inner product space $\mathbb{R}^n$. 
+        </p>
+        <h2>
+            Implementation
+        </h2>
+    <pre>
+        <code>
+import math
+
+n = int(input("what is the dimension of the space?"))
+original_basis = []
+for i in range(n):
+    vector = []
+    for j in range(n):
+        vector.append(float(input("give next coordinate")))
+    original_basis.append(vector)
+        </code>
+    </pre>
+    <p>
+        The above code just gets the original basis and the dimension of the space $n$ from the user.
+    </p>
+    <pre>
+        <code>
+def dot(x,y):
+    total = 0
+    for i,coordinate in enumerate(x):
+        total += coordinate*y[i]
+    return total
+
+def add(x,y):
+    return [x[i]+y[i] for i in range(len(x))]
+
+def times(c,x):
+    return [c*x[i] for i in range(len(x))]
+        </code>
+    </pre>
+    <p>
+        Above, I defined some useful functions.
+    </p>
+    <pre>
+        <code>
+def gram_schmidt(original_basis,n):
+    new_basis = []
+    for i in range(n):
+        new_vector = original_basis[i]
+        for j in range(i):
+            w = new_basis[j]
+            new_vector = add(new_vector, times(-1* dot(w,original_basis[n-1])/dot(w, w),w))
+        new_basis.append(new_vector)
+        print(new_basis)
+
+print(gram_schmidt(original_basis,n))
+        </code>
+    </pre>
+    <p>
+        Finally, I construct and output the orthogonal basis given by the Gram-Schmidt procedure. 
+    </p>
+    <h2>
+        Why?
+    </h2>
+
+        <p>
+        This set can then be turned into an orthonormal basis, which is important since it guarantees 
+        that usual algebraic things like $|x| = \sqrt{\sum x_i^2}$ work in practice.
+        <br><br>
+        I made this post since this is key for the linear algebra calculations which constitute
+        quantum computing.
+
+    </p>
+    </div>
+  </body>

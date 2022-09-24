@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stokes</title>
+    <link rel="stylesheet" href="C:\Users\Oliver Dorn\Documents\GitHub\odrn.github.io\css\blogstyle.css">
+    <link rel="icon" href="./icon.ico" type="image/x-icon">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+  </head>
+  <body>
+  <div class="backgroundimage">
+    
+  <div class="content">
+    <h1>Stokes' Theorem</h1> 
+    <p>Here I discuss (on a high/intuitive level) the general Stokes' theorem, with a view towards 
+        contour integration. This is intended as an exposition 
+        rather than any kind of detailed analysis. The reader should know some very basic topology,
+        analysis, and linear algebra.
+    </p> 
+    <h2>The Players</h2> 
+    <p>Let's introduce manifolds and differential forms.</p>
+    <h3>Manifolds</h3>
+    <p>A manifold is a <i>locally flat</i> (topological) space. 
+        This means "if I zoom in far enough, the space looks Euclidean". For example: consider a differentiable 
+    curve in the plane, like $y=x^2$. One can endow this set of points with a topology, and if we zoom 
+in far enough at one point then it will look like the "tangent space" $y=2x$. Any "smooth-looking" curve or 
+surface you can think of is probably a manifold. Manifolds are useful because they are a very general object 
+and we can use calculus on them. <br><br>When we do contour integration, we will be integrating over a curve 
+in the manifold $\mathbb{C}$.</p> 
+
+<h3>Differential Forms</h3>
+<p>A differential form is a kind of expression. It does not describe any specific set of points. 
+    Rather, forms generalise the idea of $\mathrm{d}x$ being some change in the plane.
+    A differential form on $\mathbb{R^2}$ might be any of the following: </p>
+    <li>$f(x)dx$</li>
+    <li>$3dx + 2dy$</li>
+    <li>$dxdy$.</li> 
+<p> Rather than themselves <i>being</i> any 
+specific change, they can be thought to <i>assign</i> a change (vector) to each point on the manifold. For example, 
+$dx$ would assign the same vector to each point, while $f(x) dx$ would probably assign different vectors 
+at each point on the manifold. 
+<br><br>
+Let's look in some more detail: $dxdy$ is confusing at first glance - how can we multiply these functions? Is this a 
+composition of functions? We will look at this type of multiplication in the <a href="./extproduct.html">exterior product post</a>. 
+For now, we will just look at $1$-forms like $dx$:
+<br><br>
+If $\omega$ is a <b>differential $1$-form</b> on a manifold $M$, then for each $p \in M$, 
+ $\omega : T_p(M) \to \mathbb{R}$, where I use $\mathbb{R}$ instead of a general field $K$ for simplicity. 
+ Therefore $\omega$ is a set of linear functionals, and it knows when to apply each one.  
+
+
+</p><h3>Forms and Calculus</h3>
+<p>Differential forms can be used to generalise the derivative: we might 
+write \[df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y}dy, \] where $df$ is called the 
+"total" derivative of $f(x,y)$.<br><br>The fundamental theorem of calculus will intuitively generalise 
+to $\int_{\gamma} df = f(b)-f(a)$, where $a,b$ are the endpoints of the curve $\gamma$.<br><br> <i>What 
+    does this mean for $\int_\gamma df$ if $\gamma$ is closed?</i> <br><br>Above, I used the integral sign 
+    to denote the integral in the following way: if $\omega$ is a differential form, then 
+    \[\int_\gamma \omega \approx \sum_{i=0}^{n-1} \omega_{x_i}(\Delta x_i),  \] where $\omega_{x_i}$ is the 
+    "change" which $\omega$ associates with the point $x_i$. In linear algebra terms, $\omega_{x_i}$ is a 
+    linear form/functional. Of course, the integral and the sum become equal as $\sup |\Delta x_i| \to 0$. 
+</p>
+<h2>The Theorem</h2>
+<p>
+Stokes' theorem involves a differential form $\omega$ and a manifold $\Omega$. It states that
+ \[\int_{\partial \Omega} \omega = \int_\Omega d \omega.\] We might as well call this the fundamental 
+ theorem of calculus - it is in perfect analogy to the real case we are all used to. 
+ <br><br>As you (hopefully) noted
+ earlier, the integral around a closed loop should be $0$. Importantly, we assumed that everything in 
+ the expression for Stokes' theorem existed - for example, $d \omega$ might not have been integrable on the 
+ whole of $\Omega$, putting a spanner in the works. We will remedy this in the contour integration post.
+ </p>
+</div>
+</div>
+  </body>
+  
+</html>
