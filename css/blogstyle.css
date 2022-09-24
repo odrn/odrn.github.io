@@ -1,0 +1,140 @@
+
+body{
+    background-image: linear-gradient(to left, #121212, #142c10 69%);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content{
+    background-color: #121212;
+    border: solid #251c19;
+    box-shadow: 0px -2px 2px rgba(34,34,34,0.6);
+    margin-left: 130px;
+    margin-right: 130px;
+    border-radius: 5px;
+    padding: 10px;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    box-shadow: 1px 2px 3px rgba(20, 17, 17, 0.5);
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255,255,255,0.85);
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(163, 219, 193, 0.9);
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(235,235,75,0.85);
+}
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(204, 63, 82, 0.85);
+}
+li{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(211, 195, 211, 0.8);
+    padding:6px;
+}
+
+.section:nth-child(3n+0){
+    border-radius: 3px;
+    border: solid slateblue;
+    padding: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    
+}
+
+.section:nth-child(3n+1){
+    border-radius: 3px;
+    border: solid olivedrab;
+    padding: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    
+}
+
+.section:nth-child(3n+2){
+    border-radius: 3px;
+    border: solid rgb(189, 129, 40);
+    padding: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    
+}
+
+details {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255,255,255,0.85);
+}
+
+summary {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255,255,255,0.85);
+
+}
+
+code {
+    color: rgba(150,250,50,0.7);
+    
+}
+
+
+button {
+  background-color: #171717;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+button:hover,
+button:focus {
+  opacity: .75;
+}
+
+input {
+    background: 0;
+    border: 0;
+    outline: none;
+    width: 80vw;
+    max-width: 400px;
+    font-size: 1.5em;
+    transition: padding 0.3s 0.2s ease;
+  
+}
+
+label {
+    font-size:large;
+}
