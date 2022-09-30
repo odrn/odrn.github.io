@@ -132,9 +132,11 @@ input {
     max-width: 400px;
     font-size: 1.5em;
     transition: padding 0.3s 0.2s ease;
+    color:rgb(189, 129, 40);
   
 }
 
 label {
     font-size:large;
+    color:aquamarine;
 }
