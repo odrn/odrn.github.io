@@ -29,15 +29,36 @@
   <article class="blog-post">
     <header class="post-header">
       <div class="title-accent"></div>
-      <h1 class="post-title">Post Title</h1>
+      <h1 class="post-title">Approaching Omics 3 - Proteins and RNA</h1>
       <div class="post-meta">
-        <time datetime="YYYY-MM-DD">Month Day, Year</time>
+        <time datetime="YYYY-MM-DD">3/25</time>
        
       </div>
     </header>
 
     <div class="post-content">
-      <!-- Your content goes here -->
+      <h1>The Geometry of Proteins</h1>
+      <p>The thumbnail image is what's called a Ramachandran plot. Let's figure out what's going on 
+      there. Here's a handy image: </p>
+      <img src="../images/proteins.jpg" width="500px">
+      <p>The image shows how amino acids bond together, and repeating this process for more 
+        amino acids on either end will make a protein. Look at the 'alpha' carbon, in light blue 
+        on the bottom right. There is an N and a C coming off. The 'torsional' angles 
+        that these two things attach at are called psi and phi respectively. There are some 
+        physically viable pairs $(\varphi,\psi)$. The subset of these that appear in some 
+        experimental sample is plotted in the Ramachandran plot.
+        <img src="../images/ramachan.jpg" width="500px">
+        <br>There are two dominant structures that proteins fold into: $\alpha$-helices and $\beta$-sheets.
+        These regions are clearly marked on the above Ramachandran plot, and you can stare at this and 
+        figure out why they would cause helices or sheets.
+      </p>
+      <h1>Prions - Folding Gone Wrong</h1>
+      Proteins can fold into unlikely, but physically possible, configurations, which 
+      don't have the desired functional effect. In fact, in cases of terrible fortune, these 
+      misfoldings can be 'contagious', encouraging the other proteins near them to misfold into the same 
+      prion form. This can cause whole clumps of tissue to degenerate, causing the famous 
+      mad-cow disease. For example, a $\beta$-sheet might turn into a $\beta$-helix. 
+      <h1>What about RNA?</h1> 
     </div>
   </article>
 </body>
