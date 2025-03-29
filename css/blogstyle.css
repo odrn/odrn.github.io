@@ -1,0 +1,148 @@
+:root {
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --bg-color: #f8f8f8;
+    --accent: #4361ee;
+    --accent-dark: #3a56d4;
+    --highlight: #f72585;
+    --border-color: #e0e0e0;
+    --tag-bg: #e0e0e0;
+    --title-accent: #4cc9f0;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f0f0f0;
+      --text-secondary: #aaa;
+      --bg-color: #121212;
+      --accent: #4cc9f0;
+      --accent-dark: #3aa8d4;
+      --highlight: #f72585;
+      --border-color: #333;
+      --tag-bg: #333;
+      --title-accent: #f72585;
+    }
+  }
+  
+  body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background: var(--bg-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .blog-post {
+    margin-bottom: 4rem;
+  }
+  
+  .post-header {
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .title-accent {
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--title-accent);
+    border-radius: 2px;
+  }
+  
+  .post-title {
+    font-size: 2.4rem;
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  
+  .post-meta {
+    color: var(--text-secondary);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .post-content {
+    font-size: 1.1rem;
+  }
+  
+  .post-content h2 {
+    margin-top: 3rem;
+    color: var(--accent);
+    font-size: 1.6rem;
+  }
+  
+  .post-content h3 {
+    margin-top: 2.5rem;
+    color: var(--text-primary);
+  }
+  
+  .post-content p {
+    margin: 1.8rem 0;
+  }
+  
+  .post-content a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--accent);
+    transition: all 0.2s ease;
+  }
+  
+  .post-content a:hover {
+    color: var(--accent-dark);
+    border-bottom-color: transparent;
+  }
+  
+  .post-content code {
+    font-family: 'Space Mono', monospace;
+    background: var(--tag-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+  
+  .post-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--tag-bg);
+    padding: 0.3em 1em;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      padding: 1.5rem 1rem;
+    }
+    
+    .post-title {
+      font-size: 2rem;
+    }
+    
+    .title-accent {
+      left: -1rem;
+    }
+  }
