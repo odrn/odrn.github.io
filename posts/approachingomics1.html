@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approaching Omics 1</title>
+   <!-- Modern MathJax loading -->
+   <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <link rel="stylesheet" href="../css/blogstyle.css">
+  <link rel="icon" href="../icon.ico" type="image/x-icon">
+  
+ 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="title-accent"></div>
+      <h1 class="post-title">Approaching Omics 1</h1>
+      <div class="post-meta">
+        <time datetime="YYYY-MM-DD">3/25</time>
+       
+      </div>
+    </header>
+
+    <div class="post-content">
+      <h1>What is "Omics"?!</h1> 
+      <p>There's no need for an interrobang. You have surely heard of a biome, 
+        and perhaps more advanced -omes like the ribosome. An -ome is kind of just the whole picture 
+        of a certain thing. There are so many -omes in biology (the transcriptome, 
+        proteome, lysosome etc.) that the integrated study of these is dubbed "omics". The genome 
+        is the whole picture of genes.
+      </p>
+      <h1>What Use is "Omics"?!</h1> 
+      <p> Cell biology is an area where things are baffingly complex on 
+        every level - we know a huge amount, but relatively quite little, about cells. For example,
+        we have sequenced the entire genome of some species, but struggle to understand diseases like
+        Alzheimer's where cells die through certain fiddly pathways. Word on the street is that
+         major
+        problems like cancer and neurodegenerative disorders could be predicted, understood, or even cured
+        using the integrated study of <i>omics</i>.
+      </p>
+      <h1>Why Would I Read <i>this</i> Article?</h1>
+      <p>To be honest, there aren't too many people who could make a decent case to read this instead of 
+        picking up some more standard material. However, if you happen to be:
+
+      </p>
+      <li>A technical (but not biology-oriented) person who wants to get into omics for research
+        or hobby purposes
+      </li>
+      <li>Interested in learning about omics without getting bogged down in the experimental specifics</li>
+      <p>Then you fit right in and I strongly encourage you to keep reading.</p>
+      <h1>Some Basic Biology</h1>
+      <p>
+        I have taken some hasty notes from Albert's 'Essential Cell Biology'. These are mostly motivational
+        and provide a sense of scale and purpose - read them for fun.<br><br>
+
+        Cells are:
+        
+        <li>chemically very similar</li>
+        <li>the unit of life (almost a biological 'quantum')</li>
+        <li>mathematically extremely different</li>
+        <br><br>
+        The geometry of a cell varies on orders of 100x or even more - 
+        axons 100µm, protozoa maybe 25µm, yeast maybe 3µm. serious variation in shape etc. 
+        often transparent and globular, hard to see under microscope - want dye. 
+        Just think about how different the geometry of a neuron with all its long spindly things is 
+        from a bacterium which might just be a cute little cylinder. 
+        <br><br>
+        The crossover of geometry and biology is fascinating - spindles of purpose-made proteins hold 
+        cells together in specialised shapes. 
+        <br><br>
+        Cell production is defined by dna: the "central dogma" of cell bio is DNA —> RNA —> protein. 
+        This is a flow of information, yes? 
+        It’s simply the consolidation of information 
+        from double-helical strands to globs of amino acid chains. 
+        Note: every cell in the world seems to have come from one cell in the distant past, 
+        but mutation (randomly) caused the variation we see today in dna. cells with the same dna, 
+        like your skin and bone cells, don’t necessarily look the same - 
+        they don’t need to produce the same proteins, or in the same quantities. 
+        The DNA provides the whole recipe, but parts of it can be ignored and ingredients omitted. 
+        This seems to be the foundation for omics - 
+        we can monitor cells based on what RNA they are producing, 
+        and this won’t be consistent even between cells of the same ‘type’. 
+        note viruses can’t reproduce themselves, so aren’t considered living.
+        <br><br>
+        genome = entire sequence of nucleotides in the DNA.
+        <br><br>
+        Eu = good, pro = before. Karyon=kernel. Thus eukaryotes have a nucleus and prokaryotes don’t. Bacteria and archaea are prokaryotes. Have spherical strep, rod salmonella, spiral syphilis. It is theorised that mitochondria were originally some aerobic bacteria who found their way into our anaerobic ancestors somehow. Yeast is a eukaryotic single-celled organism.
+        <br><br>
+        We have lysosomes, organelles performing intracellular digestion. Particles of food or toxic stuff can be broken down by the lysosomes, releasing energy or by-products. Peroxisomes are vesicles housing chemical reactions where toxic particles can be inactivated by hydrogen peroxide.
+        <br><br>
+        Eukaryotic cells have a cytoskeleton, formed by various spindles and microtubules of proteins (actin etc.) which are like ropes and girders holding the cell together and moving it. Chromosomes live in the nucleus, holding DNA coiled around histones.
+        <br><br>
+        In summary, we have discovered some -omes:
+        <br><br>
+        lysosome, chromosome, peroxisome, etc. <br><br> These -omes are <i>really</i> important. 
+      For example, we will explore the concept of lysosome membrane permeabilisation and how this 
+    can lead to cell death, theorised to be one of the causes of Alzheimer's.</p>
+
+    <h1>What's Next?</h1>
+    Now you know some trivia and a few -omes, we will dive a bit deeper into the lysosome. 
+    This will be in the next post, but here's some warm up information:<br><br>The discovery of lysosomes 
+    was Nobel-prize-in-Physiology-winning, in 1974. Lysosomes contain 50ish enzymes (proteins that 
+    do things) including proteases, lipases, etc. A low pH is required for optimal function,
+    so the membrane of the lysosome (it's kind of in a spherical 'bag') contains a proton pump! 
+    Its core function is as a digestive organelle, but it serves many other purposes too.
+
+    </div>
+  </article>
+</body>
+</html>

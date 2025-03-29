@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Title | Oliver Dorn</title>
+  <link rel="stylesheet" href="../css/blogstyle.css">
+  <link rel="icon" href="../icon.ico" type="image/x-icon">
+  
+  <!-- Modern MathJax loading -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="title-accent"></div>
+      <h1 class="post-title">War of Attrition</h1>
+      <div class="post-meta">
+        <time datetime="YYYY-MM-DD">9/22</time>
+      
+      </div>
+    </header>
+
+    <div class="post-content">
+      <div class="banner">
+
+      </div>
+  
+      <div class="content">
+          <p>This game theory construction helps us understand the relationship between auctions, sports, and other competitions. 
+            A simple war of attrition proceeds as follows: </p>
+          <li>There is a prize worth e.g $V$.</li>
+          <li>In each round, one can either <i>fold</i> or <i>fight</i>.</li>
+          <li>The cost to fight another round is e.g $c$.</li>
+          <li>Once all but one player has folded, the last player receives the prize.</li>
+  
+          <p>
+          <b>Example 1:</b>
+          There are $3$ players, including you and me. The prize is $V=5$ and it 
+          costs $c=1$ to fight. We both fight, and the third player folds. Next round, 
+          you fight but I fold. In total, you paid $1$ and gained $5$, so your payout was $4$. (You 
+          don't pay when everyone else folds.) 
+          <br><br> 
+          <b>Example 2:</b>
+          There are $2$ players. They both fold, and receive half of the prize each 
+          (the prize is divisible).
+          <br><br>
+          <b>Example 3:</b>
+          The 'rounds' of the previous game are essentially discrete time
+          intervals. We will now consider continuous time. Your time is worth $1$ per second. 
+          The prize is still $5$. I fold first, $3$ seconds in. The third player folds to you at $4.5$ seconds,
+          so you win but incur a cost of $4.5$. Your payout is $0.5$.
+          <br><br>
+          One can also consider any mixture of discrete and continuous time, and incorporate elements of 
+          randomness. 
+      </p>
+      <h2>The First Big Question:</h2>
+      <p>
+      <b><i>When should you fold in the continuous version of the game with two players?</i></b>
+      <br><br>
+      If there is some technically "optimal" strategy, then we can think of it as a CDF - a distribution
+      telling us how likely we should be to fold in any time interval. Furthermore, an optimal strategy would
+      work for both sides, so both us and the opponent would use the same CDF. 
+      <br>Consider a time interval $(t,t+h)$. Let's say your time is worth $c$ per second. 
+      The CDF you both obey is $P(t)$ with $P'(t)=p(t)$. Then \[c \cdot h = V \frac{p(t)}{1-P(t)},\] 
+      since LHS is the value you lose between $t$ and $t+h$ and RHS is the expected value you gain. We set 
+      these exactly equal to find the optimal solution. 
+      <br><br>
+      Letting $h=\mathrm{d}t$ and solving the differential equation for $P$, we find \[P(t) = 1-e^{\frac{-t}{V}}.\]
+      To approximate this in your head, you might use the expansion \[P(t)=\frac{t}{V} - \frac{t^2}{2V^2} + \cdots.\]
+      <br><br>
+      Concretely, $P(t)$ tells us the probability that we have folded at time $t$, given we are playing optimally.
+      </p>
+      <h2>An Application:</h2>
+      <p>
+      <b><i>You are completing an extra task with a coworker. Either of you can leave whenever
+          you want and go back to usual work for $£20$ per hour. However, the "last man standing" will curry 
+          favour from the boss, worth an estimated $£200$. At what point does it become likely that you have
+          left, assuming you and he are "playing" optimally?
+          
+      </i></b>
+      </p>
+      </div>
+    </div>
+    
+    
+  </article>
+</body>
+</html>

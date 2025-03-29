@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approaching Omics 2</title>
+   <!-- Modern MathJax loading -->
+   <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <link rel="stylesheet" href="../css/blogstyle.css">
+  <link rel="icon" href="../icon.ico" type="image/x-icon">
+  
+ 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="title-accent"></div>
+      <h1 class="post-title">Approaching Omics 2 - Lysosomes</h1>
+      <div class="post-meta">
+        <time datetime="YYYY-MM-DD">3/25</time>
+       
+      </div>
+    </header>
+
+    <div class="post-content">
+      <h1>Structure</h1>
+      <p>Let's start by understanding what the lysosome looks like. Note, the lysosome 
+        can be thought of as all the processes and locations pertaining to the physical
+        thing - when we do lysosomics, we study all the things going in and out and changing 
+        inside the physical lysosome.
+        <br><br>
+        The lysosome is a spherical, membrane bound 'bag', generally smaller than the 
+        nucleus but not tremendously tiny. The vacuole of a plant cell is just one big lysosome.
+        An animal cell like yours usually has order of 100 or 1000 lysosomes in it. The lysosome 
+        pumps protons into itself to maintain a lower pH - a couple of pH points doesn't sound 
+        so impressive but it's maintaining a proton concentration of 100x that outside the lysosome. 
+
+        <br><br>
+        Remember that the lysosome contains around 50 enzymes that can break things down.
+        When the genes encoding these enzymes mutate, disaster can strike. An example follows.
+
+      </p>
+      <h1>Gaucher's Disease</h1>
+      <p>A rare inherited disease, Gaucher's occurs when the lysosome can't produce an enzyme 
+        called GCase, and this allows some lipid to build up in various organs. This can have 
+        devastating consequences like bone fractures or even death. <br><br>How would we know for sure 
+      if someone has Gaucher's disease? Well, according to the central dogma of cell biology, 
+    this enzyme must have been encoded by some DNA, and before that some RNA. 
+  Technologies exist to find the counts of certain genes in RNA (the RNA can be swimming around in a 
+  sample of cells), 
+and one could theoretically analyse the counts of the gene corresponding to GCase and notice 
+that the patient doesn't have enough. This is not necessary, as the disease can be detected 
+by blood tests and other means, but this is a first look at omics.</p>
+<h1>How Do People Count Genes in Cells?</h1>
+The technology I referred to earlier is essentially that of 10x Genomics' Chromium, which takes in some 
+cells as input and returns (quite accurate) counts of all the genes appearing in the RNA from those 
+cells. Apparently you can snag one of these glorified scanners for around $250000 - a steal to 
+look into the recipe for your own body. Note that the counts of a certain gene is expected to vary 
+even between cells of the same 'type', like two of your own skin cells. The counts of genes between 
+different types of cells could vary hugely. We are starting to see why omics is so impressive.
+    </div>
+  </article>
+</body>
+</html>
